@@ -1,6 +1,6 @@
 function xp = x(t,x)
 % initialize ydot array
- global k m c F
+ global m J k c F 
  xp = zeros(12,1);
 
 %definindo os estados
@@ -22,19 +22,19 @@ function xp = x(t,x)
  xp(2)=(1/m(1))*(F(1) - c(1)*x(2) - k(1)*x(1));
  %
  xp(3)=x(4);
- xp(4)=;
+ xp(4)=(1/m(2))*(F(2));
  %
  xp(5)=x(6);
- xp(6)=;
+ xp(6)=(1/J(1));
  %
  xp(7)=x(8);
- xp(8)=;
+ xp(8)=(1/m(3));
  %
  xp(9)=x(10);
- xp(10)=;
+ xp(10)=(1/m(3));
  %
  xp(11)=x(12);
- xp(12)=;
+ xp(12)=(1/J(2));
  %
  
  
