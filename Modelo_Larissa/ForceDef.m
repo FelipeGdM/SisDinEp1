@@ -7,6 +7,8 @@ function status = ForceDef(t,y,flag)
 
 %Here, the 'OutputFnc' is used to calculate plastic deformation of the springs
 %and store it in the variable yy
+t
+y
  global k Gap Force
  switch(flag) %flag — Current status of the algorithm
    case 'init'   % 'init' — Initialization state
@@ -15,15 +17,17 @@ function status = ForceDef(t,y,flag)
    case 'done'   % 'done' — Final state
      fprintf('done\n');
    case ''    % [] - empty flag
-     F1=k(1)*(y(1)-Gap(1));
-     if Gap(1)~=0 && y(1)<=Gap(1)
-      F1=0;
-     end 
-     F2=k(2)*(y(3)-y(1)-Gap(2));
-     if Gap(2)~=0 && y(3)<=Gap(2)
-       F2=0;
-     end
-     Force=[Force; [t(end), F1, F2]];
-     status = 0;
+     for ii=1:length(t)
+       F1=k(1)*(y(1,ii)-Gap(1));
+       if Gap(1)~=0 && y(1,ii)<=Gap(1)
+        F1=0;
+       end 
+       F2=k(2)*(y(3,ii)-y(1,ii)-Gap(2));
+       if Gap(2)~=0 && y(3,ii)<=Gap(2)
+         F2=0;
+       end
+       Force=[Force; t(ii), F1, F2];
+      end 
+      status = 0;
  end
  end

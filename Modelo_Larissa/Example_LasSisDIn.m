@@ -24,7 +24,7 @@ end
 
 % Tempo de simulação do problema
 %tspan = 0:0.001:10; % intervalo de tempo [s]
-tspan = [0 5]
+tspan = [0 5];
 %% Solução do problema
 options = odeset('OutputFcn',@ForceDef);
 [T,Y] = ode45(@dydt,tspan,y0,options);
