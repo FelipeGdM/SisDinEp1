@@ -7,4 +7,6 @@ global k m J c
  k = [];
  c = [];
  
+ a_carro = 90
+ 
 %

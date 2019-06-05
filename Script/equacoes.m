@@ -1,7 +1,18 @@
 function xp = x(t,x)
 % initialize ydot array
- global m J k c F 
+ global m J k c a_carro
  xp = zeros(12,1);
+ 
+ F1 = m(1)*a_carro;
+ F2 = m(2)*a_carro;
+ F3 = m(3)*a_carro;
+ 
+ t_impacto = 0.3;
+ 
+ if t > 0 && t < t_impacto 
+     F1 = 0;
+     F2 = 0;
+     F3 = 0;
 
 %definindo os estados
  %x(1) : x.inferior
@@ -19,10 +30,10 @@ function xp = x(t,x)
  %
  
  xp(1)=x(2);
- xp(2)=(1/m(1))*(F(1) - c(1)*x(2) - k(1)*x(1));
+ xp(2)=(1/m(1))*(F1 - c(1)*x(2) - k(1)*x(1));
  %
  xp(3)=x(4);
- xp(4)=(1/m(2))*(F(2));
+ xp(4)=(1/m(2))*(F2);
  %
  xp(5)=x(6);
  xp(6)=(1/J(1));
