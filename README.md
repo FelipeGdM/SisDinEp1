@@ -1,6 +1,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com)
 
-# EP1 Sistemas Dinâmicos I
+# Trabalho Semestral Sistemas Dinâmicos I
 
 ## Introdução
 
@@ -16,8 +16,8 @@ Temos que simular uma colisão de carro
 ### Relatório
 
 - [GoogleDocs](https://docs.google.com/document/d/1OCPeX--nWaFGrolZmGS_LkGoKSdJ5N84zqZnsJw4B5c/edit?usp=sharing) Relatório da Parte 1 está no Google Drive
-- Introdução: OK
-- Modelagem: to do
+- To Do: Revisar equações
+-        Começar simulação em Matlab
 
 ### Artigos científicos
 
