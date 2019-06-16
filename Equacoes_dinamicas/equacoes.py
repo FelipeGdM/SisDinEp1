@@ -6,24 +6,25 @@ from IPython.display import display
 
 #display(yourobject)
 
-sp.init_printing()
+#sp.init_printing()
 
 t = sp.Symbol("t", positive=True)
 
 # Propriedades da cabeça
 m_c, J_c = sp.symbols("m_c J_c", positive=True)
-x_c = sp.Symbol("x_c", real=True)(t)
-y_c = sp.Symbol("y_c", real=True)(t)
-theta_c = sp.Symbol("theta_c", real=True)(t)
+x_c = sp.Function("x_c", real=True)(t)
+y_c = sp.Function("y_c", real=True)(t)
+theta_c = sp.Function("theta_c", real=True)(t)
 
 # Propriedades do torço
 m_t, J_t, L_t = sp.symbols("m_t J_t L_t", positive=True)
-x_t = sp.Symbol("x_t", real=True)(t)
-y_t = sp.Symbol("y_t", real=True)(t)
-theta_t = sp.Symbol("theta_t", real=True)(t)
+x_t = sp.Function("x_t", real=True)(t)
+y_t = sp.Function("y_t", real=True)(t)
+theta_t = sp.Function("theta_t", real=True)(t)
+L_t = sp.Symbol("L_t", real=True)
 
 # Propriedades dos membros inferiores
-x_i = sp.Symbol("x_i", real=True)(t)
+x_i = sp.Function("x_i", real=True)(t)
 m_i = sp.Symbol("m_i", positive=True)
 
 # Interação air bag-cabeça
@@ -31,7 +32,7 @@ k_ab, c_ab = sp.symbols("k_ab c_ab", positive=True)
 
 # Propriedades do pescoço
 ## Deformação do pescoço
-x_p = sp.Symbol("x_p", positive=True)(t)
+x_p = sp.Function("x_p", positive=True)(t)
 ## Mola linear
 k_p, c_p = sp.symbols("k_p c_p", positive=True)
 ## Mola de torção
@@ -67,17 +68,17 @@ class Corpo():
         self.theta = theta
 
         try:
-            self.y_ponto = y.diff()
+            self.y_ponto = y.diff(t)
         except:
             self.y_ponto = 0
 
         try:
-            self.x_ponto = x.diff()
+            self.x_ponto = x.diff(t)
         except:
             self.x_ponto = 0
 
         try:
-            self.theta_ponto = theta.diff()
+            self.theta_ponto = theta.diff(t)
         except:
             self.theta_ponto = 0
 
@@ -95,15 +96,15 @@ class Corpo():
         return (self.massa, self.quad_vel_lin,
                 self.mom_inercia, self.quad_vel_ang)
 
-Corpos = [Corpo(m_c, J_c, x_c, y_c, theta_c),
-          Corpo(m_t, J_t, x_t, y_t, theta_t),
+Corpos = [Corpo(m_c, J_c, x_i + sp.sin(theta_t)*L_t + x_p*sp.sin(theta_c), sp.cos(theta_t)*L_t + x_p*sp.cos(theta_c), theta_c),
+          Corpo(m_t, J_t, x_i + sp.sin(theta_t)*L_t, sp.cos(theta_t)*L_t, theta_t),
           Corpo(m_i, 0, x_i, 0, 0)]
 
 T = 0
 for corpo in Corpos:
     T += corpo.cinetica()
 
-display(T)
+#display(T)
 
 class Mola:
     def __init__(self, k, c, q):
@@ -115,11 +116,11 @@ class Mola:
         return (self.k*self.q**2)/2
 
     def dissipador(self):
-        return (self.c*self.q.diff()**2)/2
+        return (self.c*self.q.diff(t)**2)/2
 
 Molas = [Mola(k_p, c_p, x_p),
          Mola(k_rp, c_rp, theta_c-theta_t),
-         Mola(k_s + k_ab + k_b, c_s + c_ab + c_b, x_t),
+         Mola(k_s + k_ab + k_b, c_s + c_ab + c_b, x_i + sp.sin(theta_t)*L_t),
          Mola(k_i, c_i, x_i),
          Mola(k_ri, c_ri, theta_t)]
 
@@ -131,19 +132,20 @@ for mola in Molas:
 for corpo in Corpos:
     V += corpo.potencial(a, g)
 
-display(V)
+#display(V)
 
 D = 0
 for mola in Molas:
     D += mola.dissipador()
 
-display(D)
+#display(D)
+
 
 ## Diego Kurashima
 
 class Lagrange():
     def __init__(self, T, V, D, var):
-        self.L = T - U
+        self.L = T - V
         self.D = D
         self.var = var
 
@@ -153,12 +155,16 @@ class Lagrange():
             self.var_ponto = 0
 
     def equacao(self):
-        dL1 = self.L.diff(self.var_ponto).diff()
+        dL1 = (self.L.diff(self.var_ponto)).diff(t)
         dL2 = self.L.diff(self.var)
         dD = self.D.diff(self.var_ponto)
         return dL1 - dL2 + dD
 
-for variavel in []:
+for variavel in [Lagrange(T, V, D, x_i),
+                 Lagrange(T, V, D, theta_c),
+                 Lagrange(T, V, D, theta_t),
+                 Lagrange(T, V, D, x_p)]:
+    print(variavel.var)
     display(variavel.equacao())
 
 
