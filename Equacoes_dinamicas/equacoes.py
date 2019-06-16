@@ -159,6 +159,6 @@ class Lagrange():
         return dL1 - dL2 + dD
 
 for variavel in []:
-    display(Lagrange(T,V,D,variavel))
+    display(variavel.equacao())
 
 
