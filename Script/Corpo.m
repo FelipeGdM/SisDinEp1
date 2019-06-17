@@ -14,7 +14,7 @@ classdef Corpo
 
     methods
         function obj = Corpo(massa, mom_inercia, x, y, theta, t)
-            
+
             obj.massa = massa;
             obj.mom_inercia = mom_inercia;
 

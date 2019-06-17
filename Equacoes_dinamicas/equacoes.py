@@ -22,6 +22,7 @@ x_t = sp.Function("x_t", real=True)(t)
 y_t = sp.Function("y_t", real=True)(t)
 theta_t = sp.Function("theta_t", real=True)(t)
 L_t = sp.Symbol("L_t", real=True)
+L_p = sp.Symbol("L_p",real=True)
 
 # Propriedades dos membros inferiores
 x_i = sp.Function("x_i", real=True)(t)
@@ -103,7 +104,7 @@ Corpos = [Corpo(m_c, J_c, x_c, y_c, theta_c),
 # ou ...
 
 '''
-Corpos = [Corpo(m_c, J_c, x_i + sp.sin(theta_t)*L_t + x_p*sp.sin(theta_c), sp.cos(theta_t)*L_t + x_p*sp.cos(theta_c), theta_c),
+Corpos = [Corpo(m_c, J_c, x_i + sp.sin(theta_t)*L_p + x_p*sp.sin(theta_c), sp.cos(theta_t)*L_p + x_p*sp.cos(theta_c), theta_c),
           Corpo(m_t, J_t, x_i + sp.sin(theta_t)*L_t, sp.cos(theta_t)*L_t, theta_t),
           Corpo(m_i, 0, x_i, 0, 0)]
 '''
@@ -184,12 +185,12 @@ class Lagrange():
         dD = self.D.diff(self.dvar)
         return dL1 - dL2 + dD
 
-'''
+
 variaveis = [Lagrange(T, V, D, x_i),
                  Lagrange(T, V, D, theta_c),
                  Lagrange(T, V, D, theta_t),
                  Lagrange(T, V, D, x_p)]
-'''
+
 # ou ...
 
 variaveis = [Lagrange(T, V, D, x_i),
@@ -207,6 +208,3 @@ for variavel in variaveis:
     display(sp.solve(variavel.equacao().simplify(),variavel.ddvar))
 
 #display(sp.solve(sistema,variaveis))
-
-
-
