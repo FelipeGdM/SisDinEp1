@@ -21,11 +21,11 @@ Temos que simular uma colisão de carro
 
 ### Artigos científicos
 
-- [Acidentes de trânsito no Brasil: dados e tendências] (https://www.scielosp.org/article/csp/1994.v10suppl1/S19-S44/)
+- [Acidentes de trânsito no Brasil: dados e tendências](https://www.scielosp.org/article/csp/1994.v10suppl1/S19-S44/)
 - [Modeling of a Seated Human Body Exposed to Vertical Vibrations in Various Automotive
 Postures](https://pdfs.semanticscholar.org/e314/6dfa2ca316f51fbd3acae27c4d6997e5a1ee.pdf)
-- [LATIN AMERICAN & CARRIBEAN NEW CAR ASSESSMENT PROGRAMME] (https://www.latinncap.com/data/protocolos/LatinNCAPAdultAssessmentProtocolv3.1front_and_side_2016.pdf)
-- [Head Injury Criterion and ATB] (http://mchenrysoftware.com/HIC%20and%20the%20ATB.pdf)
-- [Crash Tests and the Head Injury Criterion] (https://pdfs.semanticscholar.org/9791/b477e6081376219d5fa3526ea4da185e626b.pdf)
-- [Hybrid III 50th Male] (http://www.humaneticsatd.com/crash-test-dummies/frontal-impact/hiii-50m)
+- [LATIN AMERICAN & CARRIBEAN NEW CAR ASSESSMENT PROGRAMME](https://www.latinncap.com/data/protocolos/LatinNCAPAdultAssessmentProtocolv3.1front_and_side_2016.pdf)
+- [Head Injury Criterion and ATB](http://mchenrysoftware.com/HIC%20and%20the%20ATB.pdf)
+- [Crash Tests and the Head Injury Criterion](https://pdfs.semanticscholar.org/9791/b477e6081376219d5fa3526ea4da185e626b.pdf)
+- [Hybrid III 50th Male](http://www.humaneticsatd.com/crash-test-dummies/frontal-impact/hiii-50m)
 
