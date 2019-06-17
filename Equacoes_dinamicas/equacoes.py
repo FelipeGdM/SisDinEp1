@@ -97,23 +97,6 @@ class Corpo():
         return (self.massa, self.quad_vel_lin,
                 self.mom_inercia, self.quad_vel_ang)
 
-Corpos = [Corpo(m_c, J_c, x_c, y_c, theta_c),
-          Corpo(m_t, J_t, L_t*sp.sin(theta_t) + x_i, sp.cos(theta_t)*L_t, theta_t),
-          Corpo(m_i, 0, x_i, 0, 0)]
-
-# ou ...
-
-'''
-Corpos = [Corpo(m_c, J_c, x_i + sp.sin(theta_t)*L_p + x_p*sp.sin(theta_c), sp.cos(theta_t)*L_p + x_p*sp.cos(theta_c), theta_c),
-          Corpo(m_t, J_t, x_i + sp.sin(theta_t)*L_t, sp.cos(theta_t)*L_t, theta_t),
-          Corpo(m_i, 0, x_i, 0, 0)]
-'''
-
-T = 0
-for corpo in Corpos:
-    T += corpo.cinetica()
-
-#display(T)
 
 class Mola:
     def __init__(self, k, c, q):
@@ -126,39 +109,6 @@ class Mola:
 
     def dissipador(self):
         return (self.c*self.q.diff(t)**2)/2
-
-Molas = [Mola(k_p, c_p, sp.sqrt((x_c - x_t)**2 + (y_c - L_t*sp.cos(theta_t))**2)),
-         Mola(k_rp, c_rp, theta_c-theta_t),
-         Mola(k_s + k_ab + k_b, c_s + c_ab + c_b, x_t),
-         Mola(k_i, c_i, x_i),
-         Mola(k_ri, c_ri, theta_t)]
-
-# ou ...
-
-
-'''
-Molas = [Mola(k_p, c_p, x_p),
-         Mola(k_rp, c_rp, theta_c-theta_t),
-         Mola(k_s + k_ab + k_b, c_s + c_ab + c_b, x_i + sp.sin(theta_t)*L_t),
-         Mola(k_i, c_i, x_i),
-         Mola(k_ri, c_ri, theta_t)]
-'''
-
-V = 0
-
-for mola in Molas:
-    V += mola.potencial()
-
-for corpo in Corpos:
-    V += corpo.potencial(a, g)
-
-#display(V)
-
-D = 0
-for mola in Molas:
-    D += mola.dissipador()
-
-#display(D)
 
 
 ## Diego Kurashima
@@ -186,10 +136,75 @@ class Lagrange():
         return dL1 - dL2 + dD
 
 
+#### Corpos
+
+Corpos = [Corpo(m_c, J_c, x_c, y_c, theta_c),
+          Corpo(m_t, J_t, L_t*sp.sin(theta_t) + x_i, sp.cos(theta_t)*L_t, theta_t),
+          Corpo(m_i, 0, x_i, 0, 0)]
+
+# ou ...
+
+'''
+Corpos = [Corpo(m_c, J_c, x_i + sp.sin(theta_t)*L_p + x_p*sp.sin(theta_c), sp.cos(theta_t)*L_p + x_p*sp.cos(theta_c), theta_c),
+          Corpo(m_t, J_t, x_i + sp.sin(theta_t)*L_t, sp.cos(theta_t)*L_t, theta_t),
+          Corpo(m_i, 0, x_i, 0, 0)]
+'''
+
+#### Molas: molas e amortecedores
+
+Molas = [Mola(k_p, c_p, sp.sqrt((x_c - x_t)**2 + (y_c - L_t*sp.cos(theta_t))**2)),
+         Mola(k_rp, c_rp, theta_c-theta_t),
+         Mola(k_s + k_ab + k_b, c_s + c_ab + c_b, x_t),
+         Mola(k_i, c_i, x_i),
+         Mola(k_ri, c_ri, theta_t)]
+
+# ou ...
+
+
+'''
+Molas = [Mola(k_p, c_p, x_p),
+         Mola(k_rp, c_rp, theta_c-theta_t),
+         Mola(k_s + k_ab + k_b, c_s + c_ab + c_b, x_i + sp.sin(theta_t)*L_t),
+         Mola(k_i, c_i, x_i),
+         Mola(k_ri, c_ri, theta_t)]
+'''
+
+#### Energia Cinética
+
+T = 0
+for corpo in Corpos:
+    T += corpo.cinetica()
+
+#display(T)
+
+#### Energia Potencial
+
+V = 0
+
+for mola in Molas:
+    V += mola.potencial()
+
+for corpo in Corpos:
+    V += corpo.potencial(a, g)
+
+#display(V)
+
+#### Energias dissipativas
+
+D = 0
+for mola in Molas:
+    D += mola.dissipador()
+
+#display(D)
+
+#### Determinado equações do Lagrangiano
+
+'''
 variaveis = [Lagrange(T, V, D, x_i),
                  Lagrange(T, V, D, theta_c),
                  Lagrange(T, V, D, theta_t),
                  Lagrange(T, V, D, x_p)]
+'''
 
 # ou ...
 
