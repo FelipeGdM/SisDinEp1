@@ -12589,7 +12589,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -12635,25 +12635,25 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Propriedades da cabeça</span>
 <span class="n">m_c</span><span class="p">,</span> <span class="n">J_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;m_c J_c&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">x_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x_c&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">y_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;y_c&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">theta_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;theta_c&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;x_c&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;y_c&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">theta_c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;theta_c&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="c1"># Propriedades do torço</span>
 <span class="n">m_t</span><span class="p">,</span> <span class="n">J_t</span><span class="p">,</span> <span class="n">L_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;m_t J_t L_t&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">x_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x_t&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">y_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;y_t&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
-<span class="n">theta_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;theta_t&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;x_t&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;y_t&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">theta_t</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;theta_t&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="c1"># Propriedades dos membros inferiores</span>
-<span class="n">x_i</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x_i&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x_i</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;x_i&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
 <span class="n">m_i</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;m_i&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Interação air bag-cabeça</span>
@@ -12661,7 +12661,8 @@ div#notebook {
 
 <span class="c1"># Propriedades do pescoço</span>
 <span class="c1">## Deformação do pescoço</span>
-<span class="n">x_p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;x_p&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x_p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;x_p&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">L_p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;L_p&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1">## Mola linear</span>
 <span class="n">k_p</span><span class="p">,</span> <span class="n">c_p</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;k_p c_p&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1">## Mola de torção</span>
@@ -12683,7 +12684,7 @@ div#notebook {
 <span class="n">k_i</span><span class="p">,</span> <span class="n">c_i</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;k_i c_i&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Desaceleração do carro</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -12774,6 +12775,11 @@ div#notebook {
 <td>$x_p$</td>
 <td>m</td>
 <td style="text-align:center">Deformação do pescoço</td>
+</tr>
+<tr>
+<td>$L_p$</td>
+<td>m</td>
+<td style="text-align:center">Comprimento natural do pescoço</td>
 </tr>
 <tr>
 <td>$k_p$</td>
@@ -12909,7 +12915,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Corpo</span><span class="p">():</span>
@@ -12962,7 +12968,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">corpo</span> <span class="ow">in</span> <span class="n">Corpos</span><span class="p">:</span>
@@ -13022,7 +13028,7 @@ $$\left ( m_{i}, \quad \left(\frac{d}{d t} \operatorname{x_{i}}{\left (t \right 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Corpos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cinetica</span><span class="p">())</span>
@@ -13055,7 +13061,7 @@ $$\frac{J_{c}}{2} \left(\frac{d}{d t} \theta_{c}{\left (t \right )}\right)^{2} +
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">0</span>
@@ -13155,7 +13161,7 @@ $$\frac{J_{c}}{2} \left(\frac{d}{d t} \theta_{c}{\left (t \right )}\right)^{2} +
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Mola</span><span class="p">:</span>
@@ -13184,7 +13190,7 @@ $$\frac{J_{c}}{2} \left(\frac{d}{d t} \theta_{c}{\left (t \right )}\right)^{2} +
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">V</span> <span class="o">=</span> <span class="mi">0</span>
@@ -13214,7 +13220,7 @@ $$\frac{J_{c}}{2} \left(\frac{d}{d t} \theta_{c}{\left (t \right )}\right)^{2} +
 
 
 <div class="output_latex output_subarea ">
-$$a m_{i} \operatorname{x_{i}}{\left (t \right )} + \frac{k_{i}}{2} \operatorname{x_{i}}^{2}{\left (t \right )} + \frac{k_{p}}{2} \operatorname{x_{p}}^{2}{\left (t \right )} + \frac{k_{ri}}{2} \theta_{t}^{2}{\left (t \right )} + \frac{k_{rp}}{2} \left(\theta_{c}{\left (t \right )} - \theta_{t}{\left (t \right )}\right)^{2} + m_{c} \left(a \operatorname{x_{c}}{\left (t \right )} + g \operatorname{y_{c}}{\left (t \right )}\right) + m_{t} \left(a \operatorname{x_{t}}{\left (t \right )} + g \operatorname{y_{t}}{\left (t \right )}\right) + \frac{1}{2} \left(k_{ab} + k_{b} + k_{s}\right) \operatorname{x_{t}}^{2}{\left (t \right )}$$
+$$\frac{k_{i}}{2} \operatorname{x_{i}}^{2}{\left (t \right )} + \frac{k_{p}}{2} \operatorname{x_{p}}^{2}{\left (t \right )} + \frac{k_{ri}}{2} \theta_{t}^{2}{\left (t \right )} + \frac{k_{rp}}{2} \left(\theta_{c}{\left (t \right )} - \theta_{t}{\left (t \right )}\right)^{2} + m_{c} \left(g \operatorname{y_{c}}{\left (t \right )} + a{\left (t \right )} \operatorname{x_{c}}{\left (t \right )}\right) + m_{i} a{\left (t \right )} \operatorname{x_{i}}{\left (t \right )} + m_{t} \left(g \operatorname{y_{t}}{\left (t \right )} + a{\left (t \right )} \operatorname{x_{t}}{\left (t \right )}\right) + \frac{1}{2} \left(k_{ab} + k_{b} + k_{s}\right) \operatorname{x_{t}}^{2}{\left (t \right )}$$
 </div>
 
 </div>
@@ -13264,7 +13270,7 @@ $$a m_{i} \operatorname{x_{i}}{\left (t \right )} + \frac{k_{i}}{2} \operatornam
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mi">0</span>
@@ -13299,6 +13305,39 @@ $$\frac{c_{i}}{2} \left(\frac{d}{d t} \operatorname{x_{i}}{\left (t \right )}\ri
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">D</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_i</span><span class="o">.</span><span class="n">diff</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[79]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$c_{i} \frac{d}{d t} \operatorname{x_{i}}{\left (t \right )}$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13319,10 +13358,27 @@ $$\frac{c_{i}}{2} \left(\frac{d}{d t} \operatorname{x_{i}}{\left (t \right )}\ri
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x_t</span><span class="p">,</span> <span class="n">L_t</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_t</span><span class="p">)</span> <span class="o">+</span> <span class="n">x_i</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eqs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x_t</span><span class="p">,</span> <span class="n">L_t</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_t</span><span class="p">)</span> <span class="o">+</span> <span class="n">x_i</span><span class="p">),</span> 
+       <span class="p">(</span><span class="n">y_t</span><span class="p">,</span> <span class="n">L_t</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_t</span><span class="p">)),</span> 
+       <span class="p">(</span><span class="n">x_p</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x_c</span><span class="o">-</span><span class="n">L_t</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_t</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y_c</span><span class="o">-</span><span class="n">L_t</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_t</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">L_p</span><span class="p">),</span> 
+       <span class="p">(</span><span class="n">theta_c</span><span class="p">,</span> <span class="n">sp</span><span class="o">.</span><span class="n">atan</span><span class="p">((</span><span class="n">x_c</span><span class="o">-</span><span class="n">L_t</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta_t</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">y_c</span><span class="o">-</span><span class="n">L_t</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_t</span><span class="p">))))]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">eq</span> <span class="ow">in</span> <span class="n">eqs</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="o">*</span><span class="n">eq</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13335,13 +13391,52 @@ $$\frac{c_{i}}{2} \left(\frac{d}{d t} \operatorname{x_{i}}{\left (t \right )}\ri
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+<div class="prompt"></div>
 
 
 
 
-<div class="output_latex output_subarea output_execute_result">
-$$\operatorname{x_{t}}{\left (t \right )} = L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{i}}{\left (t \right )}$$
+<div class="output_latex output_subarea ">
+$$\operatorname{x_{t}}{\left (t \right )} = \frac{L_{t}}{2} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{i}}{\left (t \right )}$$
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$\operatorname{y_{t}}{\left (t \right )} = \frac{L_{t}}{2} \cos{\left (\theta_{t}{\left (t \right )} \right )}$$
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$\operatorname{x_{p}}{\left (t \right )} = - L_{p} + \sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}$$
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$\theta_{c}{\left (t \right )} = \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )}$$
 </div>
 
 </div>
@@ -13352,10 +13447,30 @@ $$\operatorname{x_{t}}{\left (t \right )} = L_{t} \sin{\left (\theta_{t}{\left (
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">y_t</span><span class="p">,</span> <span class="n">L_t</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta_t</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">V_f</span> <span class="o">=</span> <span class="n">V</span>
+<span class="n">T_f</span> <span class="o">=</span> <span class="n">T</span>
+<span class="n">D_f</span> <span class="o">=</span> <span class="n">D</span>
+
+<span class="k">for</span> <span class="n">eq</span> <span class="ow">in</span> <span class="n">eqs</span><span class="p">:</span>
+    <span class="n">V_f</span> <span class="o">=</span> <span class="n">V_f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">*</span><span class="n">eq</span><span class="p">)</span>
+    <span class="n">T_f</span> <span class="o">=</span> <span class="n">T_f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">*</span><span class="n">eq</span><span class="p">)</span>
+    <span class="n">D_f</span> <span class="o">=</span> <span class="n">D_f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="o">*</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">V</span>
 </pre></div>
 
 </div>
@@ -13368,13 +13483,13 @@ $$\operatorname{x_{t}}{\left (t \right )} = L_{t} \sin{\left (\theta_{t}{\left (
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[54]:</div>
 
 
 
 
 <div class="output_latex output_subarea output_execute_result">
-$$\operatorname{y_{t}}{\left (t \right )} = L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )}$$
+$$\frac{k_{i}}{2} \operatorname{x_{i}}^{2}{\left (t \right )} + \frac{k_{p}}{2} \operatorname{x_{p}}^{2}{\left (t \right )} + \frac{k_{ri}}{2} \theta_{t}^{2}{\left (t \right )} + \frac{k_{rp}}{2} \left(\theta_{c}{\left (t \right )} - \theta_{t}{\left (t \right )}\right)^{2} + m_{c} \left(g \operatorname{y_{c}}{\left (t \right )} + a{\left (t \right )} \operatorname{x_{c}}{\left (t \right )}\right) + m_{i} a{\left (t \right )} \operatorname{x_{i}}{\left (t \right )} + m_{t} \left(g \operatorname{y_{t}}{\left (t \right )} + a{\left (t \right )} \operatorname{x_{t}}{\left (t \right )}\right) + \frac{1}{2} \left(k_{ab} + k_{b} + k_{s}\right) \operatorname{x_{t}}^{2}{\left (t \right )}$$
 </div>
 
 </div>
@@ -13385,10 +13500,10 @@ $$\operatorname{y_{t}}{\left (t \right )} = L_{t} \cos{\left (\theta_{t}{\left (
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">theta_c</span><span class="p">),</span> <span class="n">x_c</span><span class="o">/</span><span class="n">y_c</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">V_f</span>
 </pre></div>
 
 </div>
@@ -13401,13 +13516,171 @@ $$\operatorname{y_{t}}{\left (t \right )} = L_{t} \cos{\left (\theta_{t}{\left (
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[55]:</div>
 
 
 
 
 <div class="output_latex output_subarea output_execute_result">
-$$\tan{\left (\theta_{c}{\left (t \right )} \right )} = \frac{\operatorname{x_{c}}{\left (t \right )}}{\operatorname{y_{c}}{\left (t \right )}}$$
+$$\frac{k_{i}}{2} \operatorname{x_{i}}^{2}{\left (t \right )} + \frac{k_{p}}{2} \left(- L_{p} + \sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}\right)^{2} + \frac{k_{ri}}{2} \theta_{t}^{2}{\left (t \right )} + \frac{k_{rp}}{2} \left(- \theta_{t}{\left (t \right )} + \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )}\right)^{2} + m_{c} \left(g \operatorname{y_{c}}{\left (t \right )} + a{\left (t \right )} \operatorname{x_{c}}{\left (t \right )}\right) + m_{i} a{\left (t \right )} \operatorname{x_{i}}{\left (t \right )} + m_{t} \left(\frac{L_{t} g}{2} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \left(\frac{L_{t}}{2} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{i}}{\left (t \right )}\right) a{\left (t \right )}\right) + \frac{1}{2} \left(\frac{L_{t}}{2} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{i}}{\left (t \right )}\right)^{2} \left(k_{ab} + k_{b} + k_{s}\right)$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">qs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x_c</span><span class="p">,</span> <span class="n">y_c</span><span class="p">,</span> <span class="n">theta_t</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Equa&#231;&#227;o-de-Lagrange">Equa&#231;&#227;o de Lagrange<a class="anchor-link" href="#Equa&#231;&#227;o-de-Lagrange">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lagrange</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">L_f</span> <span class="o">=</span> <span class="n">T_f</span> <span class="o">-</span> <span class="n">V_f</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">qs</span><span class="p">:</span>
+    <span class="n">lagrange</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">L_f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span> <span class="n">q</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span> <span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">L_f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="n">D_f</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span> <span class="n">q</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">eq</span> <span class="ow">in</span> <span class="n">lagrange</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">eq</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$c_{i} \frac{d}{d t} \operatorname{x_{i}}{\left (t \right )} + k_{i} \operatorname{x_{i}}{\left (t \right )} + m_{i} a{\left (t \right )} + m_{i} \frac{d^{2}}{d t^{2}}  \operatorname{x_{i}}{\left (t \right )} + m_{t} a{\left (t \right )} + \frac{1}{2} \left(L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + 2 \operatorname{x_{i}}{\left (t \right )}\right) \left(k_{ab} + k_{b} + k_{s}\right)$$
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$- \frac{J_{c}}{2} \left(\frac{2}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right) \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)^{2}} \left(\frac{2 L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \theta_{t}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) - \frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{3}} \left(- 2 L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \theta_{t}{\left (t \right )} - 2 \frac{d}{d t} \operatorname{y_{c}}{\left (t \right )}\right)\right) + \frac{2 \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \theta_{t}{\left (t \right )} - \frac{d}{d t} \operatorname{y_{c}}{\left (t \right )}\right)}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2} \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)}\right) \frac{\partial}{\partial t} \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )} + \frac{k_{p} \left(- L_{p} + \sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}\right) \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)}{\sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}} + \frac{k_{rp} \left(- \theta_{t}{\left (t \right )} + \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )}\right)}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right) \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)} + m_{c} a{\left (t \right )} + m_{c} \frac{d^{2}}{d t^{2}}  \operatorname{x_{c}}{\left (t \right )}$$
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$- \frac{J_{c}}{2} \left(\frac{4 L_{t} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \sin{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \theta_{t}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{3} \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)} - \frac{2}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2} \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)^{2}} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \left(\frac{2 L_{t} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} \frac{d}{d t} \theta_{t}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{3}} \sin{\left (\theta_{t}{\left (t \right )} \right )} - \frac{1}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \left(- 2 L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \theta_{t}{\left (t \right )} + 2 \frac{d}{d t} \operatorname{x_{c}}{\left (t \right )}\right)\right) - \frac{2 \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \theta_{t}{\left (t \right )} + \frac{d}{d t} \operatorname{x_{c}}{\left (t \right )}\right)}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2} \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)}\right) \frac{\partial}{\partial t} \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )} + g m_{c} + \frac{k_{p} \left(- L_{p} + \sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}\right) \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)}{\sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}} - \frac{k_{rp} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \left(- \theta_{t}{\left (t \right )} + \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )}\right)}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2} \left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)} + m_{c} \frac{d^{2}}{d t^{2}}  \operatorname{y_{c}}{\left (t \right )}$$
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_latex output_subarea ">
+$$- \frac{J_{c}}{2} \left(\frac{2}{\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1} \left(\frac{2 L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \operatorname{y_{c}}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{3}} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) - \frac{L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \operatorname{x_{c}}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + \frac{L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} \frac{d}{d t} \operatorname{y_{c}}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}\right) + \frac{2}{\left(\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1\right)^{2}} \left(\frac{2 \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} \frac{d}{d t} \operatorname{y_{c}}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{3}} - \frac{2 \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \frac{d}{d t} \operatorname{x_{c}}{\left (t \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}\right) \left(- \frac{L_{t} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \sin{\left (\theta_{t}{\left (t \right )} \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} - \frac{L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}}\right)\right) \frac{\partial}{\partial t} \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )} + J_{t} \frac{d^{2}}{d t^{2}}  \theta_{t}{\left (t \right )} + \frac{L_{t}}{2} \left(\frac{L_{t}}{2} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{i}}{\left (t \right )}\right) \left(k_{ab} + k_{b} + k_{s}\right) \cos{\left (\theta_{t}{\left (t \right )} \right )} + c_{ri} \frac{d}{d t} \theta_{t}{\left (t \right )} + \frac{c_{rp}}{2} \left(2 \frac{d}{d t} \theta_{t}{\left (t \right )} - 2 \frac{\partial}{\partial t} \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )}\right) + \frac{k_{p}}{\sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}} \left(- L_{p} + \sqrt{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2} + \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}}\right) \left(- L_{t} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \cos{\left (\theta_{t}{\left (t \right )} \right )} + L_{t} \left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right) \sin{\left (\theta_{t}{\left (t \right )} \right )}\right) + k_{ri} \theta_{t}{\left (t \right )} + \frac{k_{rp}}{2} \left(-2 + \frac{2}{\frac{\left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right)^{2}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} + 1} \left(- \frac{L_{t} \left(- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}\right) \sin{\left (\theta_{t}{\left (t \right )} \right )}}{\left(- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}\right)^{2}} - \frac{L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}}\right)\right) \left(- \theta_{t}{\left (t \right )} + \operatorname{atan}{\left (\frac{- L_{t} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{x_{c}}{\left (t \right )}}{- L_{t} \cos{\left (\theta_{t}{\left (t \right )} \right )} + \operatorname{y_{c}}{\left (t \right )}} \right )}\right) + m_{t} \left(- \frac{L_{t} g}{2} \sin{\left (\theta_{t}{\left (t \right )} \right )} + \frac{L_{t}}{2} a{\left (t \right )} \cos{\left (\theta_{t}{\left (t \right )} \right )}\right)$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">qi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;q_i&quot;</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)(</span><span class="n">t</span><span class="p">,</span> <span class="n">qi</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">)(</span><span class="n">t</span><span class="p">,</span> <span class="n">qi</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">qi</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[69]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\frac{\partial^{2}}{\partial q_{i}\partial t}  L{\left (t,q_{i} \right )}$$
 </div>
 
 </div>
