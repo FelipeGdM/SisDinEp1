@@ -13,7 +13,7 @@ classdef Corpo
     end
 
     methods
-        function obj = Corpo(massa, mom_inercia, x, y, theta, t)
+        function obj = Corpo(massa, mom_inercia, x, dx, y, dy, theta, dtheta)
             
             obj.massa = massa;
             obj.mom_inercia = mom_inercia;
@@ -22,9 +22,9 @@ classdef Corpo
             obj.y = y;
             obj.theta = theta;
 
-            obj.x_ponto = diff(x, t);
-            obj.y_ponto = diff(y, t);
-            obj.theta_ponto = diff(theta, t);
+            obj.x_ponto = dx;
+            obj.y_ponto = dy;
+            obj.theta_ponto = dtheta;
 
             obj.quad_vel_lin = obj.x_ponto.^2 + obj.y_ponto.^2;
             obj.quad_vel_ang = obj.theta_ponto.^2;
