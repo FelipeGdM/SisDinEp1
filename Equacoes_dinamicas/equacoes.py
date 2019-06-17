@@ -97,7 +97,7 @@ class Corpo():
                 self.mom_inercia, self.quad_vel_ang)
 
 Corpos = [Corpo(m_c, J_c, x_c, y_c, theta_c),
-          Corpo(m_t, J_t, x_t, sp.cos(theta_t)*L_t, theta_t),
+          Corpo(m_t, J_t, L_t*sp.sin(theta_t) + x_i, sp.cos(theta_t)*L_t, theta_t),
           Corpo(m_i, 0, x_i, 0, 0)]
 
 # ou ...
