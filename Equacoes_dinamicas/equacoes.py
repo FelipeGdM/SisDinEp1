@@ -169,14 +169,19 @@ class Lagrange():
         self.var = var
 
         try:
-            self.var_ponto = var.diff(t)
+            self.dvar = self.var.diff(t)
         except:
-            self.var_ponto = 0
+            self.dvar = 0
+
+        try:
+            self.ddvar = self.dvar.diff(t)
+        except:
+            self.ddvar = 0
 
     def equacao(self):
-        dL1 = (self.L.diff(self.var_ponto)).diff(t)
+        dL1 = (self.L.diff(self.dvar)).diff(t)
         dL2 = self.L.diff(self.var)
-        dD = self.D.diff(self.var_ponto)
+        dD = self.D.diff(self.dvar)
         return dL1 - dL2 + dD
 
 '''
@@ -194,8 +199,14 @@ variaveis = [Lagrange(T, V, D, x_i),
              Lagrange(T, V, D, y_c),
              Lagrange(T, V, D, theta_c)]
 
+#sistema = np.empty(len(variaveis))
 for variavel in variaveis:
     print(variavel.var)
-    display(variavel.equacao())
+    display(variavel.equacao().simplify())
+    #np.append(sistema,variavel.equacao().simplify())
+    display(sp.solve(variavel.equacao().simplify(),variavel.ddvar))
+
+#display(sp.solve(sistema,variaveis))
+
 
 
