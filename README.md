@@ -1,23 +1,29 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com)
 
-# Trabalho Semestral Sistemas Dinâmicos I
+# Trabalho Semestral : MODELAGEM E ANÁLISE DE UM DUMMY EM  UM TESTE DE COLISÃO FRONTAL  DE UM VEÍCULO
+
+PMR 3302 - Sistemas Dinâmicos I para Mecatrônica - Poli USP 2019
+
+Diego Jun Sato Kurashima - 10274231
+Felipe Gomes de Melo D’Elia - 10340624
+Fernanda Tiemi Kanazawa - 10332890
+Renato Shiguenobu Yoshizaki - 4355806
 
 ## Introdução
 
-Temos que simular uma colisão de carro
+Temos que simular uma dummy comercial numa colisão de um carro
 
 ## Referências
 
 ### GitHub
 
-- [Lembretes importantes](./Primeiros_passos.md) sobre como mexer com o Git e GitHub  
+- [Lembretes importantes](./Primeiros_passos.md) sobre como mexer com o Git e GitHub
 - [GitMoji](https://gitmoji.carloscuesta.me/) como usar emojis nas mensagens de commit
 
 ### Relatório
 
-- [GoogleDocs](https://docs.google.com/document/d/1OCPeX--nWaFGrolZmGS_LkGoKSdJ5N84zqZnsJw4B5c/edit?usp=sharing) Relatório da Parte 1 está no Google Drive
-- To Do: Revisar equações
--        Começar simulação em Matlab
+- [GoogleDocs](https://docs.google.com/document/d/1OCPeX--nWaFGrolZmGS_LkGoKSdJ5N84zqZnsJw4B5c/edit?usp=sharing) Relatório está no Google Drive
+- Começar simulação em Matlab ....
 
 ### Artigos científicos
 
