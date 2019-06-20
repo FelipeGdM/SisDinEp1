@@ -46,7 +46,7 @@ g = 9.8;
 
 %dYdt = Equations_4(t,Y,m_i,m_c,J_c,m_t,J_t,L_t,L_p,k_ab,c_ab,k_p,c_p,k_rp,c_rp,k_s,c_s,k_b,c_b,k_ri,c_ri,k_i,c_i,a,g)
 
-tspan = 0:0.01:1;
+tspan = 0:0.001:0.7;
 %options = odeset('RelTol',1e-5); 
 Y0 = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0];
 % x_i: Y(1) Y(2)
@@ -70,10 +70,19 @@ sistema = @(t,Y)[(Y(2));
           ((1/J_c)*(-k_rp*(Y(11) - Y(5)) - c_ri*(Y(12) - Y(6))))];
 
 [t, Y] = ode45(sistema, tspan, [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]);
-Y
 figure(1)
 plot(t, Y)
 grid on
 str = {'$$ x_i (m) $$','$$ \dot{x_i} (m/s) $$','$$ x_t (m) $$','$$ \dot{x_t} (m/s) $$', '$$ \theta _t (rad) $$', '$$ \dot{\theta _t} (rad/s) $$','$$ x_c (m) $$','$$ \dot{x_c} (m/s) $$','$$ y_c (m) $$','$$ \dot{y_c} (m/s) $$', '$$ \theta _c (rad) $$', '$$ \dot{\theta _c} (rad/s) $$'};
 legend(str, 'Interpreter','latex', 'Location','NW');
 title('Análise do movimento do dummy em uma colisão');
+
+
+%Aceleração da cabeça
+Vc2 = Y(:,8).^2 + Y(:,10).^2;
+Vc = Vc2.^(1/2);
+acc = diff(Vc)./diff(t);
+acc_x = diff(Y(:,8))./diff(t);
+
+figure(2)
+plot(t(2:701), acc)
