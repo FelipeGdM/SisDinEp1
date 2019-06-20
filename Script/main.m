@@ -34,15 +34,15 @@ g = 9.8;
 
 %dYdt = Equations_4(t,Y,m_i,m_c,J_c,m_t,J_t,L_t,L_p,k_ab,c_ab,k_p,c_p,k_rp,c_rp,k_s,c_s,k_b,c_b,k_ri,c_ri,k_i,c_i,a,g)
 
-tspan = [0 5];
+tspan = [0 2]
 options = odeset('RelTol',1e-5); 
 Y4 = [0; 0; 0; 0; 0; 0; 0; 0];
 %Y6 = [0 0 0 0 0 0 0 0 0 0 0 0 0 0];
 [t Y] = ode45(@(t,Y) Equations_4(t,Y,m_i,m_c,J_c,m_t,J_t,L_t,L_p,k_ab,c_ab,k_p,c_p,k_rp,c_rp,k_s,c_s,k_b,c_b,k_ri,c_ri,k_i,c_i,a,g), tspan, Y4, options);
-%Sol = ode45(@(t,Y) Equations_6(t,Y,m_i,m_c,J_c,m_t,J_t,L_t,L_p,k_ab,c_ab,k_p,c_p,k_rp,c_rp,k_s,c_s,k_b,c_b,k_ri,c_ri,k_i,c_i,a,g), tspan, Y6); %options);
+%[t Y] = ode45(@(t,Y) Equations_6(t,Y,m_i,m_c,J_c,m_t,J_t,L_t,L_p,k_ab,c_ab,k_p,c_p,k_rp,c_rp,k_s,c_s,k_b,c_b,k_ri,c_ri,k_i,c_i,a,g), tspan, Y6); %options);
 
 figure(1)
-plot(t, x)
+plot(t, Y)
              
              
              
