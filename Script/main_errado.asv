@@ -44,11 +44,13 @@ g = 9.8;
 
 %% Equação
 
-%dYdt = Equations_4(t,Y,m_i,m_c,J_c,m_t,J_t,L_t,L_p,k_ab,c_ab,k_p,c_p,k_rp,c_rp,k_s,c_s,k_b,c_b,k_ri,c_ri,k_i,c_i,a,g)
-
-tspan = 0:0.001:0.7;
+ti = 0;
+h = 0.001;
+tf = 0.7;
+tspan = ti:h:tf;
 %options = odeset('RelTol',1e-5); 
-Y0 = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0];
+
+Y0 = [0; 0; 0; 0; 0; 0; 0; 0; L_p + 0.2; 0; 0; 0];
 % x_i: Y(1) Y(2)
 % x_t: Y(3) Y(4)
 % theta_t: Y(5) Y(6)
@@ -59,26 +61,53 @@ Y0 = [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0];
 sistema = @(t,Y)[(Y(2));
           ((1/m_i)*(m_i*a - c_i*Y(2) - k_i*Y(1)));
           (Y(4));
-          ((1/m_t)*(m_t*a - (c_s + c_ab)*Y(4) - (k_s + k_ab)*Y(3) - k_p*(Y(7) - Y(3) + (L_p - L_t)*sin(Y(5)) ) ));
+          ((1/m_t)*(m_t*a - (c_s + c_ab)*Y(4) - c_p*(Y(4)-Y(8)) - (k_s + k_ab)*Y(3) - k_p*(Y(7) - Y(3) + (L_p - L_t)*sin(Y(5)) ) ));
           (Y(6));
           ((1/J_t)*( -k_ri*Y(5) - k_rp*(Y(5) - Y(11)) - k_p*(Y(7) + Y(9) - Y(3) + (L_p - L_t)*(cos(Y(5))+ sin(Y(5)))) - c_ri*Y(6) -  c_rp*(Y(6) - Y(12))));
           (Y(8));
-          ((1/m_c)*(m_c*a -  k_p*(Y(7)- Y(3) + (L_p - L_t)*(sin(Y(5)))) - k_ab*(Y(7)- Y(3)) - c_ab*(Y(8))));
+          ((1/m_c)*(m_c*a -  k_p*(Y(7)- Y(3) + (L_p - L_t)*(sin(Y(5)))) - k_ab*(Y(7)- Y(3))- c_p*(Y(8)-Y(4)) - c_ab*(Y(8))));
           (Y(10));
-          ((1/m_c)*(- k_p*(Y(9) - (L_p - L_t)*(cos(Y(5))))- c_ab*(Y(10)) - m_c*g));
+          ((1/m_c)*(- k_p*(Y(9) - (L_p - L_t)*(cos(Y(5))))- c_p*(Y(10)) - m_c*g));
           (Y(12));
-          ((1/J_c)*(-k_rp*(Y(11) - Y(5)) - c_ri*(Y(12) - Y(6))))];
+          ((1/J_c)*(-k_rp*(Y(11) - Y(5)) - c_rp*(Y(12) - Y(6))))];
 
-[t, Y] = ode45(sistema, tspan, [0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]);
+[t, Y] = ode45(sistema, tspan, Y0);
 figure(1)
-plot(t, Y)
+plot(t, Y(:,7:12))
 grid on
-str = {'$$ x_i (m) $$','$$ \dot{x_i} (m/s) $$','$$ x_t (m) $$','$$ \dot{x_t} (m/s) $$', '$$ \theta _t (rad) $$', '$$ \dot{\theta _t} (rad/s) $$','$$ x_c (m) $$','$$ \dot{x_c} (m/s) $$','$$ y_c (m) $$','$$ \dot{y_c} (m/s) $$', '$$ \theta _c (rad) $$', '$$ \dot{\theta _c} (rad/s) $$'};
+str = {'$$ x_c (m) $$','$$ \dot{x_c} (m/s) $$','$$ y_c (m) $$','$$ \dot{y_c} (m/s) $$', '$$ \theta _c (rad) $$', '$$ \dot{\theta _c} (rad/s) $$'};
 legend(str, 'Interpreter','latex', 'Location','NW');
-title('Análise do movimento do dummy em uma colisão');
+title('Análise da cabeça do dummy em na colisão');
 
 
-%Aceleração em x
+%Aceleração da cabeça
+Vc2 = Y(:,8).^2 + Y(:,10).^2;
+Vc = Vc2.^(1/2);
+acc = (diff(Vc)./diff(t));
 
-Vc2 = Y(:,8).*(Y:,10) 
-a = diff(Y(:,8))./diff(t);
+figure(2)
+plot(t(2:701), acc)
+
+%Cálculo da HIC_15
+HIC = 0;
+k = 1;
+
+for n = ti:h:tf-16*h
+    A = acc(k:k+15);
+    HIC_a = ((trapz(A)*(1/(0.015)))^2.5)*0.015;
+    HIC_t = HIC_a
+    if HIC_a > HIC
+        HIC = HIC_a;
+    end 
+    k = k + 1;
+end
+
+
+HIC
+
+
+ 
+    
+    
+    
+    
