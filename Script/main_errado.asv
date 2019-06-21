@@ -85,18 +85,19 @@ title('Análise da cabeça do dummy em na colisão');
 %Aceleração da cabeça
 Vc2 = Y(:,8).^2+ Y(:,10).^2; % Velocidade resultante quadratica
 Vc = Vc2.^(1/2);             % Velocidade resultante
-acc = (diff(Vc)./diff(t));   % Aceleração: derivando a Velocidade
+acc = ((diff(Vc)./diff(t)))./g;   % Aceleração g: derivando a Velocidade
 
 figure(2)
 plot(t(1:tf/h), acc)
+title('Aceleração g da cabeça');
 
 %Cálculo da HIC_15
 HIC = 0;
 k = 1;
 
 for n = ti:h:tf-16*h
-    A = acc(k:k+15);
-    HIC_a = ((trapz(A)*(1/(0.015)))^2.5)*0.015; %Definição de HIC para 15ms
+    A = acc(k:k+14);
+    HIC_a = ((trapz(A)*(1./(0.015)))^2.5)*0.015 ; %Definição de HIC para 15ms
     HIC_t = HIC_a;
     if abs(HIC_a) > HIC
         HIC = abs(HIC_a);
