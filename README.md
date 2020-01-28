@@ -9,23 +9,12 @@ Felipe Gomes de Melo D’Elia - 10340624
 Fernanda Tiemi Kanazawa - 10332890  
 Renato Shiguenobu Yoshizaki - 4355806  
 
-## Introdução
+## Proposta
 
-Temos que simular uma dummy comercial numa colisão de um carro
+Simular um dummy comercial numa colisão de um carro
+
 
 ## Referências
-
-### GitHub
-
-- [Lembretes importantes](./Primeiros_passos.md) sobre como mexer com o Git e GitHub
-- [GitMoji](https://gitmoji.carloscuesta.me/) como usar emojis nas mensagens de commit
-
-### Relatório
-
-- [GoogleDocs](https://docs.google.com/document/d/1TXpxV2bo7Q6AugUWqBlSZvue2Zq58t-bbQ1t8DJMfIE/edit) Relatório está no Google Drive
-- Começar simulação em Matlab ....
-
-### Artigos científicos
 
 - [Acidentes de trânsito no Brasil: dados e tendências](https://www.scielosp.org/article/csp/1994.v10suppl1/S19-S44/)
 - [Modeling of a Seated Human Body Exposed to Vertical Vibrations in Various Automotive
