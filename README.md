@@ -4,10 +4,10 @@
 
 PMR 3302 - Sistemas Dinâmicos I para Mecatrônica - Poli USP 2019
 
-Diego Jun Sato Kurashima - 10274231  
-Felipe Gomes de Melo D’Elia - 10340624  
-Fernanda Tiemi Kanazawa - 10332890  
-Renato Shiguenobu Yoshizaki - 4355806  
+Diego Jun Sato Kurashima  
+Felipe Gomes de Melo D’Elia  
+Fernanda Tiemi Kanazawa  
+Renato Shiguenobu Yoshizaki  
 
 ## Proposta
 
